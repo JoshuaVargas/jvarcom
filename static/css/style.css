@@ -1,0 +1,163 @@
+/* default site styling */
+
+body {
+    background-color: rgb(20, 20, 20);
+    font-family: 'Roboto Mono', monospace;
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.0);
+    border: 1px solid rgba(255, 255, 255, 0.0);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+div {
+    background-color: rgba(255, 255, 255, 0.01);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* start of the main area of the site */
+
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+main > *{
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.0);
+    border: 1px solid rgba(255, 255, 255, 0.0);
+}
+
+.main-about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-about > p{
+    width: 600px;
+    max-width: 80vw;
+}
+
+/* Navbar */
+
+.topnav{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    border-style: none;
+    background-color: rgba(255, 255, 255, 0.00);
+    justify-content: flex-end;
+}
+
+.animatedNavItem{
+    border-radius: 0px 10px 0px 10px;
+    margin: 0px 5px;
+    padding: 0px 10px;
+}
+
+.animatedNavItem:hover{
+    background-color: white;
+    color: black;
+}
+
+/* start of technologies */
+
+
+.main-technologies{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-technologies > p{
+    width: 600px;
+    max-width: 80vw;
+}
+
+/* start of projects */
+
+.main-projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectWrapper{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.00);
+    border-style: none;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.projectItem{
+    height: 200px;
+    width: 300px;
+    margin: 10px;
+}
+
+.projectDescription{
+    background-color: rgba(255, 255, 255, 0.00);
+    border-style: none;
+    height: 200px;
+    width: 300px;
+}
+
+.main-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-contact > p{
+    width: 600px;
+    max-width: 80vw;
+}
+
+#getInTouch{
+    font-size: 1.5rem;
+    padding: 0px 10px;
+    background-color: white;
+    color: black;
+    border-radius: 0px 10px 0px 10px;
+    margin: 19.92px;
+}
+
+#getInTouch:hover{
+    background-color: rgba(255, 255, 255, 0.90);
+    color: black;
+}
+
+#resume{
+    font-size: 1.5rem;
+    padding: 0px 10px;
+    background-color: white;
+    color: black;
+    border-radius: 0px 10px 0px 10px;
+}
+
+#resume:hover{
+    background-color: rgba(255, 255, 255, 0.90);
+    color: black;
+}
