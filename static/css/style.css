@@ -117,6 +117,10 @@ main > *{
     margin: 10px;
 }
 
+.projectItem img{
+    object-fit: contain;
+}
+
 .projectDescription{
     background-color: rgba(255, 255, 255, 0.00);
     border-style: none;
