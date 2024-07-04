@@ -118,7 +118,7 @@ main > *{
 }
 
 .projectItem > img{
-    width: inherit%;
+    width: inherit;
     object-fit: contain; 
 }
 
