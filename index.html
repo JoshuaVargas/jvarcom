@@ -2,17 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joshua Vargas</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./static/css/reset.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
 </head>
 <body>
-    <div class="main">
-        <div class="main-content">
-            <p>Hello, Github Pages...</p>
-        </div>
-    </div>
+    <nav class="topnav">
+        <a href="" class="animatedNavItem" id="about" data-value="ABOUT">ABOUT</a>
+        <a href="" class="animatedNavItem" id="projects" data-value="PROJECTS">PROJECTS</a>
+        <a href="" class="animatedNavItem" id="contact" data-value="CONTACT">CONTACT</a>
+        <a href="" class="animatedNavItem" id="resume" data-value="RESUME">RESUME</a>
+        
+    </nav>
+    <main>
+        <section class="main-about">
+            <h1>Joshua Vargas: Cybersecurity, Software Development, Writing</h1>
+            <p>
+                Hello! My name is Joshua, and I enjoy cybersecurity, programming, and writing.
+                I love working in MERN and ASP.Net Core, and my favorite architectural pattern
+                is MVC. Python is OP for scripting, but powershell is something else...
+            </p>
+            <p>
+                If you're looking for a backend or full-stack developer with a passion
+                for writing secure APIs and robust documentation for thoses same services
+                (my documentation is so good it won't make your head spin!), I'm your guy.
+                Feel free to reach out at joshvvargas[at]gmail[dot]com.
+            </p>
+        </section>
+        <section class="main-technologies">
+            <h2>Programming Technologies</h2>
+            <p>
+                <span style="font-weight: bold;">Languages:</span> C#, JavaScript, Python, HTML5, CSS, SQL, Powershell
+            </p>
+            <p>
+                <span style="font-weight: bold;">Frameworks/Libraries:</span> ASP.Net Core, MERN, Flask
+            </p>
+            <p>
+                <span style="font-weight: bold;">Databases:</span> MySQL, MongoDB
+            </p>
+            <p>
+                <span style="font-weight: bold;">Tools:</span> PostMan, MySQL Workbench, Docker, Kubernetes, AWS
+            </p>
+        </section>
+        <section class="main-projects">
+            <div class="projectWrapper">
+                <div class="projectItem" id="project1">
+                    Project Item
+                </div>
+                <div class="projectDescription" id="projectDescription1">
+                    <h3><a href="https://github.com/JoshuaVargas/azure-soc-and-honeynet">Azure SOC and Honeynet</a></h3>
+                    <p>
+                        I created a small SOC in Azure using Sentinel. It was used
+                        to monitor a honeynet built using Windows and Linux VMs.
+                        After monitoring, I applied the NIST 800-53 SC-7 control to 
+                        enforce boundary protection by hardening the network and hosts.
+                    </p>
+                </div>
+            </div> <!--
+            <div class="projectWrapper">
+                <div class="projectItem" id="project2">
+                    Project Item
+                </div>
+                <div class="projectDescription" id="projectDescription2">
+                    <h3>Project Title</h3>
+                    <p>
+                        This is a short description of the project. It includes
+                        a description of what the project accomplishes along with
+                        a the technologies that were used to build it.
+                    </p>
+                </div>
+            </div>
+            <div class="projectWrapper">
+                <div class="projectItem" id="project2">
+                    Project Item
+                </div>
+                <div class="projectDescription" id="projectDescription3">
+                    <h3>Project Title</h3>
+                    <p>
+                        This is a short description of the project. It includes
+                        a description of what the project accomplishes along with
+                        a the technologies that were used to build it.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="main-contact">
+            <h2>Contact Me</h2>
+            <p>
+                I am always looking for new opportunities and my inbox is always 
+                open. If you have any questions or just want to say hi, shoot me 
+                a line and I'll get back to you soon.
+            </p>
+            <a href="" class="animatedNavItem" id="getInTouch" data-value="MESSAGE ME">MESSAGE ME</a>
+        </section> -->
+    </main>
+    <script src="../static/js/script.js"></script>
 </body>
 </html>
