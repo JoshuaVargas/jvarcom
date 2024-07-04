@@ -117,9 +117,10 @@ main > *{
     margin: 10px;
 }
 
-img {
+.projectItem > img{
     height: 100%;
     width: 100%;
+    content-fit: contain; 
 }
 
 .projectDescription{
