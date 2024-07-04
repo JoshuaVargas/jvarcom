@@ -118,8 +118,9 @@ main > *{
 }
 
 .projectItem > img{
+    height: inherit;
     width: inherit;
-    object-fit: contain; 
+    object-fit: contain;
 }
 
 .projectDescription{
