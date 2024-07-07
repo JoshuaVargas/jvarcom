@@ -28,7 +28,7 @@ function animateNavItem (idSelector){
 }
 
 animateNavItem("#about")
+animateNavItem("#skills")
 animateNavItem("#projects")
 animateNavItem("#content")
 animateNavItem("#resume")
-animateNavItem("#getInTouch")
