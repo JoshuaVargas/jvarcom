@@ -30,5 +30,5 @@ function animateNavItem (idSelector){
 animateNavItem("#about")
 animateNavItem("#skills")
 animateNavItem("#projects")
-animateNavItem("#content")
+animateNavItem("#blog")
 animateNavItem("#resume")
