@@ -28,6 +28,5 @@ function animateNavItem (idSelector){
 }
 
 animateNavItem("#about")
-animateNavItem("#projects")
 animateNavItem("#blog")
 animateNavItem("#necrofane")
