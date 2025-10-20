@@ -115,6 +115,7 @@ main > *{
     height: 240px;
     width: 426px;
     margin: 10px;
+    background-color: white;
 }
 
 .projectItem > img{
@@ -195,4 +196,5 @@ main > *{
 #resume:hover{
     background-color: rgba(255, 255, 255, 0.90);
     color: black;
+
 }
