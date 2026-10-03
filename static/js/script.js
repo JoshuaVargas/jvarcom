@@ -1,9 +1,6 @@
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function scramble(element) {
-    if (reduceMotion.matches) return;
-
     const target = element.dataset.value;
     let iterations = 0;
 
