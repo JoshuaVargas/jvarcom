@@ -1,200 +1,272 @@
-/* default site styling */
+/* tokens */
 
-body {
-    background-color: rgb(20, 20, 20);
-    font-family: 'Roboto Mono', monospace;
+:root {
+    --bg: #141414;
+    --fg: #fff;
+    --muted: rgba(255, 255, 255, 0.65);
+    --line: rgba(255, 255, 255, 0.08);
+    --surface: rgba(255, 255, 255, 0.02);
+    --radius: 0 10px 0 10px;
+    --font: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --measure: 42rem;
+    color-scheme: dark;
 }
 
-main {
-    background-color: rgba(255, 255, 255, 0.0);
-    border: 1px solid rgba(255, 255, 255, 0.0);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
+/* reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-div {
-    background-color: rgba(255, 255, 255, 0.01);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    color: white;
+* {
+    margin: 0;
 }
 
-li {
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    padding: 0;
     list-style: none;
 }
 
+/* base */
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
 a {
+    color: inherit;
     text-decoration: none;
-    color: white;
 }
 
-/* start of the main area of the site */
-
-main{
-    display: flex;
-    flex-direction: column;
+:focus-visible {
+    outline: 2px solid var(--fg);
+    outline-offset: 3px;
 }
 
-main > *{
-    flex: 1;
-    background-color: rgba(255, 255, 255, 0.0);
-    border: 1px solid rgba(255, 255, 255, 0.0);
+::selection {
+    background-color: var(--fg);
+    color: var(--bg);
 }
 
-.main-about{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+h1 {
+    font-size: clamp(2rem, 6vw, 2.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
 }
 
-.main-about > p{
-    width: 600px;
-    max-width: 80vw;
+h2 {
+    font-size: 1.25rem;
+    margin-block-end: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
-/* Navbar */
+h3 {
+    font-size: 1rem;
+    line-height: 1.4;
+}
 
-.topnav{
+p + p {
+    margin-block-start: 1rem;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+/* navbar */
+
+.topnav {
     display: flex;
     flex-wrap: wrap;
-    font-size: 1.5rem;
-    border-style: none;
-    background-color: rgba(255, 255, 255, 0.00);
     justify-content: flex-end;
+    gap: 0.25rem 0.5rem;
+    padding: 1rem;
+    font-size: 1.25rem;
 }
 
-.animatedNavItem{
-    border-radius: 0px 10px 0px 10px;
-    margin: 0px 5px;
-    padding: 0px 10px;
+.animatedNavItem {
+    display: inline-block;
+    padding: 0 0.6rem;
+    border-radius: var(--radius);
+    transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.animatedNavItem:hover{
-    background-color: white;
-    color: black;
+.animatedNavItem[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
 }
 
-/* start of technologies */
+.animatedNavItem:hover,
+.animatedNavItem--solid {
+    background-color: var(--fg);
+    color: var(--bg);
+}
 
+.animatedNavItem--solid:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+}
 
-.main-technologies{
+/* main */
+
+main {
+    flex: 1;
+    width: 100%;
+    max-width: var(--measure);
+    margin-inline: auto;
+    padding: 2rem 1rem 4rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 4rem;
 }
 
-.main-technologies > p{
-    width: 600px;
-    max-width: 80vw;
-}
-
-/* start of projects */
-
-.main-projects{
+.intro {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 1.25rem;
+    padding-block-start: 2rem;
 }
 
-.projectWrapper{
-    display: flex;
-    background-color: rgba(255, 255, 255, 0.00);
-    border-style: none;
-    flex-wrap: wrap;
-    align-items: center;
+.intro--center {
+    min-height: 50vh;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-.projectItem{
-    height: 240px;
-    width: 426px;
-    margin: 10px;
-    background-color: white;
+/* in progress */
+
+.progressList {
+    display: grid;
+    gap: 1rem;
 }
 
-.projectItem > img{
-    height: inherit;
-    width: inherit;
+.progressList p + p {
+    margin-block-start: 0;
+}
+
+.progress {
+    font-variant-ligatures: none;
+    white-space: pre-wrap;
+}
+
+/* cards (projects and blog posts) */
+
+.cardList {
+    display: grid;
+    gap: 1rem;
+}
+
+.card {
+    display: grid;
+    gap: 1rem 1.5rem;
+    padding: 1rem;
+    background-color: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.card:hover,
+.card:focus-within {
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.card--media {
+    grid-template-columns: minmax(0, 14rem) 1fr;
+    align-items: center;
+}
+
+.cardThumb {
+    background-color: var(--fg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.cardThumb > img {
+    width: 100%;
+    height: 100%;
     object-fit: contain;
 }
 
-.projectDescription{
-    background-color: rgba(255, 255, 255, 0.00);
-    border-style: none;
-    height: 300px;
-    width: 300px;
+.card h3 a::after {
+    content: " \2197";
+    color: var(--muted);
 }
 
-/* start of blog */
-
-.main-blog{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.card h3 a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
 }
 
-.main-blog-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.cardMeta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 1rem;
+    margin-block-start: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--muted);
 }
 
-.main-blog-body > p{
-    width: 600px;
-    max-width: 80vw;
+.cardMeta dd {
+    color: var(--fg);
 }
 
-.blogDescription{
-    background-color: rgba(255, 255, 255, 0.00);
-    border-style: none;
-    height: 200px;
-    width: 300px;
+.card:not(.card--media) {
+    gap: 0.5rem;
 }
 
-/* start of contact (delete?) */
-
-.main-contact{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.card p {
+    color: var(--muted);
 }
 
-.main-contact > p{
-    width: 600px;
-    max-width: 80vw;
+/* footer */
+
+footer {
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--muted);
 }
 
-#getInTouch{
-    font-size: 1.5rem;
-    padding: 0px 10px;
-    background-color: white;
-    color: black;
-    border-radius: 0px 10px 0px 10px;
-    margin: 19.92px;
+/* small screens */
+
+@media (max-width: 36rem) {
+    .card--media {
+        grid-template-columns: 1fr;
+    }
+
+    .topnav {
+        justify-content: center;
+    }
 }
 
-#getInTouch:hover{
-    background-color: rgba(255, 255, 255, 0.90);
-    color: black;
-}
-
-#necrofane{
-    font-size: 1.5rem;
-    padding: 0px 10px;
-    background-color: white;
-    color: black;
-    border-radius: 0px 10px 0px 10px;
-}
-
-#resume:hover{
-    background-color: rgba(255, 255, 255, 0.90);
-    color: black;
-
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
 }

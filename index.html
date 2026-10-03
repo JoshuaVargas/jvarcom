@@ -2,110 +2,130 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Joshua Vargas</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="./static/css/reset.css">
-    <link rel="stylesheet" href="./static/css/style.css">
+    <meta name="description" content="Joshua Vargas is a writer working on Necrofane, a dark fantasy RPG, and Oathbound, an interactive fiction title set in the Necrofane universe.">
+    <meta name="theme-color" content="#141414">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='0' fill='%23141414'/%3E%3Ctext x='16' y='23' font-family='monospace' font-size='20' font-weight='700' fill='white' text-anchor='middle'%3EJV%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
 </head>
 <body>
-    <nav class="topnav">
-        <a href="./index.html" class="animatedNavItem" id="about" data-value="ABOUT">ABOUT</a>
-        <a href="./blog.html" class="animatedNavItem" id="blog" data-value="BLOG">BLOG</a>
-        <a href="https://linktr.ee/necrofane" class="animatedNavItem" id="necrofane" data-value="NECROFANE">NECROFANE</a>
+    <nav class="topnav" aria-label="Main">
+        <a href="/" class="animatedNavItem" data-value="ABOUT" aria-current="page">ABOUT</a>
+        <a href="/blog.html" class="animatedNavItem" data-value="BLOG">BLOG</a>
+        <a href="https://linktr.ee/necrofane" class="animatedNavItem animatedNavItem--solid" data-value="NECROFANE">NECROFANE</a>
     </nav>
     <main>
-        <section class="main-about">
+        <section class="intro">
             <h1>Joshua Vargas</h1>
             <p>
                 I write things. I'm currently the writer for Necrofane, a dark fantasy RPG, and Oathbound, an interactive fiction title set in the Necrofane universe.
             </p>
         </section>
-        <section class="main-technologies">
-            <h2>In Progress</h2>
-            <p>
-                <span style="font-weight: bold;">Necrofane:</span> [|.........] [10%]<br>&emsp;Current Task: Demo dialogue
-            </p>
-            <p>
-                <span style="font-weight: bold;">Oathbound:</span> [||........] [20%]<br>&emsp;Current Task: Chapter 2
-            </p>
+
+        <section aria-labelledby="in-progress">
+            <h2 id="in-progress">In Progress</h2>
+            <ul class="progressList">
+                <li>
+                    <h3>Necrofane</h3>
+                    <p class="progress" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" aria-label="Necrofane progress">[|.........] [10%]</p>
+                    <p class="muted">Current task: Demo dialogue</p>
+                </li>
+                <li>
+                    <h3>Oathbound</h3>
+                    <p class="progress" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" aria-label="Oathbound progress">[||........] [20%]</p>
+                    <p class="muted">Current task: Chapter 2</p>
+                </li>
+            </ul>
         </section>
-        <section class="main-projects">
-            <h2>Previous Projects</h2>
-            <div class="projectWrapper">
-                <a href="https://ifi.games/game/my-next-life-as-a-villainess-all-routes-lead-to-doom-pirates-of-the-disturbance/"><div class="projectItem" id="project1">
-                    <img src="./static/imgs/Thumbnails_1280x720_Villainess-640x360.png" alt="Villainess Thumbnail.">
-                </div></a>
-                <div class="projectDescription" id="projectDescription2">
-                    <h3><a href="https://ifi.games/game/my-next-life-as-a-villainess-all-routes-lead-to-doom-pirates-of-the-disturbance/">My Next Life as a Villainess: All Routes Lead to Doom! -Pirates of the Disturbance-</a></h3>
-                    <p>
-                        Platform: Nintendo Switch<br>
-                        Date: Dec 2022 - Mar 2023<br>
-                        Role: Localization Editor<br><br>
-                    </p>
-                </div>
-            </div>
-            <div class="projectWrapper">
-                <a href="https://ifi.games/game/charade-maniacs/"><div class="projectItem" id="project2">
-                    <img src="./static/imgs/Thumbnails_1280x720_CM-640x360.png" alt="Charade Maniacs Thumbnail.">
-                </div></a>
-                <div class="projectDescription" id="projectDescription2">
-                    <h3><a href="https://ifi.games/game/charade-maniacs/">Charade Maniacs</a></h3>
-                    <p>
-                        Platform: Nintendo Switch<br>
-                        Date: Jun 2022 - Dec 2022<br>
-                        Role: Localization Editor<br><br>
-                    </p>
-                </div>
-            </div>
-            <div class="projectWrapper">
-                <a href="https://ifi.games/game/amnesia-later-x-crowd/"><div class="projectItem" id="project3">
-                    <img src="./static/imgs/Thumbnails_1280x720_AmnesiaLC-640x360.png" alt="Amnesia: Later x Crowd Thumbnail.">
-                </div></a>
-                <div class="projectDescription" id="projectDescription3">
-                    <h3><a href="https://ifi.games/game/amnesia-later-x-crowd/">Amnesia™: Later x Crowd</a></h3>
-                    <p>
-                        Platform: Nintendo Switch<br>
-                        Date: Mar 2022 - Jun 2022<br>
-                        Role: QA Tester<br><br>
-                    </p>
-                </div>
-            </div>
-            <div class="projectWrapper">
-                <a href="https://ifi.games/game/ninja-wars/"><div class="projectItem" id="project4">
-                    <img src="./static/imgs/Thumbnails_1280x720_NepNinja2-640x360.png" alt="Nep Ninja 2 Thumbnail.">
-                </div></a>
-                <div class="projectDescription" id="projectDescription4">
-                    <h3><a href="https://ifi.games/game/ninja-wars/">Neptunia™ x SENRAN KAGURA: Ninja Wars</a></h3>
-                    <p>
-                        Platform: Steam<br>
-                        Date: Feb 2022 - Mar 2022<br>
-                        Role: QA Tester<br><br>
-                    </p>
-                </div>
-            </div>
-            <div class="projectWrapper">
-                <a href="https://ifi.games/game/dusk-diver-2/"><div class="projectItem" id="project5">
-                    <img src="./static/imgs/Thumbnails_1280x720_DD2-640x360.png" alt="Dusk Diver 2 Thumbnail.">
-                </div></a>
-                <div class="projectDescription" id="projectDescription5">
-                    <h3><a href="https://ifi.games/game/dusk-diver-2/">Dusk Diver 2</a></h3>
-                    <p>
-                        Platform: Nintendo Switch<br>
-                        Date: Dec 2021 - Feb 2022<br>
-                        Role: QA Tester<br><br>
-                    </p>
-                </div>
-            </div>
+
+        <section aria-labelledby="previous-projects">
+            <h2 id="previous-projects">Previous Projects</h2>
+            <ul class="cardList">
+                <li>
+                    <article class="card card--media">
+                        <a href="https://ifi.games/game/my-next-life-as-a-villainess-all-routes-lead-to-doom-pirates-of-the-disturbance/" class="cardThumb" tabindex="-1" aria-hidden="true">
+                            <img src="/static/imgs/Thumbnails_1280x720_Villainess-640x360.png" alt="" width="640" height="360" loading="lazy" decoding="async">
+                        </a>
+                        <div>
+                            <h3><a href="https://ifi.games/game/my-next-life-as-a-villainess-all-routes-lead-to-doom-pirates-of-the-disturbance/">My Next Life as a Villainess: All Routes Lead to Doom! -Pirates of the Disturbance-</a></h3>
+                            <dl class="cardMeta">
+                                <dt>Platform</dt><dd>Nintendo Switch</dd>
+                                <dt>Date</dt><dd>Dec 2022 – Mar 2023</dd>
+                                <dt>Role</dt><dd>Localization Editor</dd>
+                            </dl>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="card card--media">
+                        <a href="https://ifi.games/game/charade-maniacs/" class="cardThumb" tabindex="-1" aria-hidden="true">
+                            <img src="/static/imgs/Thumbnails_1280x720_CM-640x360.png" alt="" width="640" height="360" loading="lazy" decoding="async">
+                        </a>
+                        <div>
+                            <h3><a href="https://ifi.games/game/charade-maniacs/">Charade Maniacs</a></h3>
+                            <dl class="cardMeta">
+                                <dt>Platform</dt><dd>Nintendo Switch</dd>
+                                <dt>Date</dt><dd>Jun 2022 – Dec 2022</dd>
+                                <dt>Role</dt><dd>Localization Editor</dd>
+                            </dl>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="card card--media">
+                        <a href="https://ifi.games/game/amnesia-later-x-crowd/" class="cardThumb" tabindex="-1" aria-hidden="true">
+                            <img src="/static/imgs/Thumbnails_1280x720_AmnesiaLC-640x360.png" alt="" width="640" height="360" loading="lazy" decoding="async">
+                        </a>
+                        <div>
+                            <h3><a href="https://ifi.games/game/amnesia-later-x-crowd/">Amnesia™: Later x Crowd</a></h3>
+                            <dl class="cardMeta">
+                                <dt>Platform</dt><dd>Nintendo Switch</dd>
+                                <dt>Date</dt><dd>Mar 2022 – Jun 2022</dd>
+                                <dt>Role</dt><dd>QA Tester</dd>
+                            </dl>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="card card--media">
+                        <a href="https://ifi.games/game/ninja-wars/" class="cardThumb" tabindex="-1" aria-hidden="true">
+                            <img src="/static/imgs/Thumbnails_1280x720_NepNinja2-640x360.png" alt="" width="640" height="360" loading="lazy" decoding="async">
+                        </a>
+                        <div>
+                            <h3><a href="https://ifi.games/game/ninja-wars/">Neptunia™ x SENRAN KAGURA: Ninja Wars</a></h3>
+                            <dl class="cardMeta">
+                                <dt>Platform</dt><dd>Steam</dd>
+                                <dt>Date</dt><dd>Feb 2022 – Mar 2022</dd>
+                                <dt>Role</dt><dd>QA Tester</dd>
+                            </dl>
+                        </div>
+                    </article>
+                </li>
+                <li>
+                    <article class="card card--media">
+                        <a href="https://ifi.games/game/dusk-diver-2/" class="cardThumb" tabindex="-1" aria-hidden="true">
+                            <img src="/static/imgs/Thumbnails_1280x720_DD2-640x360.png" alt="" width="640" height="360" loading="lazy" decoding="async">
+                        </a>
+                        <div>
+                            <h3><a href="https://ifi.games/game/dusk-diver-2/">Dusk Diver 2</a></h3>
+                            <dl class="cardMeta">
+                                <dt>Platform</dt><dd>Nintendo Switch</dd>
+                                <dt>Date</dt><dd>Dec 2021 – Feb 2022</dd>
+                                <dt>Role</dt><dd>QA Tester</dd>
+                            </dl>
+                        </div>
+                    </article>
+                </li>
+            </ul>
         </section>
     </main>
-    <script src="./static/js/script.js"></script>
+    <footer>
+        &copy; <span data-year>2026</span> Joshua Vargas
+    </footer>
 </body>
-
 </html>
-
-
