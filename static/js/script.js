@@ -1,32 +1,35 @@
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-function animateNavItem (idSelector){
+function scramble(el) {
+    if (reduceMotion.matches) return;
 
-    document.querySelector(idSelector).onmouseover = function (event) {
-        let iterations = 0;
-        const interval = setInterval(
-            function splitMapJoinIterateNavItem() {
-                event.target.innerText = event.target.innerText.split("")
+    const target = el.dataset.value;
+    let iterations = 0;
 
-                    .map(
-                        function randomizeAndReset(letter, index) {
-                            if(index < iterations) {
-                                return event.target.dataset.value[index];
-                            }
-                            return letters[Math.floor(Math.random() * 36)]
-                        })
+    // restarting mid-animation shouldn't stack timers
+    clearInterval(el._scrambleTimer);
+    el._scrambleTimer = setInterval(() => {
+        el.textContent = [...target]
+            .map((letter, i) =>
+                i < iterations ? letter : LETTERS[Math.floor(Math.random() * LETTERS.length)]
+            )
+            .join("");
 
-                    .join("");
-
-                if(iterations >= event.target.dataset.value.length) {
-                    clearInterval(interval);
-                }
-
-                iterations = iterations + 1 / 3;
-            }, 30);
-    }
+        if (iterations >= target.length) {
+            clearInterval(el._scrambleTimer);
+            el.textContent = target;
+        }
+        iterations += 1 / 3;
+    }, 30);
 }
 
-animateNavItem("#about")
-animateNavItem("#blog")
-animateNavItem("#necrofane")
+document.querySelectorAll(".animatedNavItem").forEach((el) => {
+    // screen readers get the real word, not the scrambled text
+    el.setAttribute("aria-label", el.dataset.value);
+    el.addEventListener("mouseenter", () => scramble(el));
+    el.addEventListener("focus", () => scramble(el));
+});
+
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
