@@ -1,32 +1,35 @@
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-function animateNavItem (idSelector){
+function scramble(element) {
+    if (reduceMotion.matches) return;
 
-    document.querySelector(idSelector).onmouseover = function (event) {
-        let iterations = 0;
-        const interval = setInterval(
-            function splitMapJoinIterateNavItem() {
-                event.target.innerText = event.target.innerText.split("")
+    const target = element.dataset.value;
+    let iterations = 0;
 
-                    .map(
-                        function randomizeAndReset(letter, index) {
-                            if(index < iterations) {
-                                return event.target.dataset.value[index];
-                            }
-                            return letters[Math.floor(Math.random() * 36)]
-                        })
+    clearInterval(element.scrambleInterval);
+    element.scrambleInterval = setInterval(() => {
+        element.textContent = target
+            .split("")
+            .map((letter, index) =>
+                index < iterations ? target[index] : letters[Math.floor(Math.random() * letters.length)]
+            )
+            .join("");
 
-                    .join("");
+        if (iterations >= target.length) {
+            clearInterval(element.scrambleInterval);
+            element.textContent = target;
+        }
 
-                if(iterations >= event.target.dataset.value.length) {
-                    clearInterval(interval);
-                }
-
-                iterations = iterations + 1 / 3;
-            }, 30);
-    }
+        iterations += 1 / 3;
+    }, 30);
 }
 
-animateNavItem("#about")
-animateNavItem("#blog")
-animateNavItem("#necrofane")
+document.querySelectorAll(".animatedNavItem").forEach((item) => {
+    item.addEventListener("mouseenter", () => scramble(item));
+    item.addEventListener("focus", () => scramble(item));
+});
+
+document.querySelectorAll("[data-year]").forEach((el) => {
+    el.textContent = new Date().getFullYear();
+});
